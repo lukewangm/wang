@@ -243,7 +243,7 @@ void display(map<string, Item> inventory)
 		cout << "Inventory:" << endl;
 		for(map<string,Item>::const_iterator it = inventory.cbegin(); it != inventory.cend(); ++it)
 		{
-		    cout << it->second.name << " " << it->second.price << endl;
+		    cout << it->second.name << " $" << it->second.price << endl;
 		}
 	}
 	cout << endl;	
