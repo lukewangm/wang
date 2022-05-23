@@ -64,7 +64,21 @@ int main()
 			else
 			{
 				cout << "What is the price?" << endl;
-				cin >> temp_price;
+
+				while(true)
+				{
+					cin >> temp_price;
+					if(cin.fail())
+					{
+					    cin.clear();
+					    cin.ignore();
+					    cout << "Invalid, insert a numerical value" << endl;
+					}
+					else
+					{
+						break;
+					}
+				}				
 				Item newItem(temp_price, temp_name);
 				inventory.insert ( make_pair(temp_name, newItem) );
 				cout << endl;
