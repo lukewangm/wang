@@ -97,7 +97,21 @@ int main()
 						if(change == 'p')
 						{
 							cout << "New price: ";
-							cin >> temp_price;
+							while(true)
+							{
+								cin >> temp_price;
+								if(cin.fail())
+								{
+								    cin.clear();
+								    cin.ignore();
+								    cout << "Invalid, insert a numerical value" << endl;
+								}
+								else
+								{
+									break;
+								}
+							}
+							
 							inventory.find(temp_name)->second.price = temp_price;
 							change = 'e';
 						}
@@ -120,7 +134,7 @@ int main()
 						else
 						{
 							cout << endl;
-							cout << "the options are n, p , or q" << endl;
+							cout << "the options are n, p , or e" << endl;
 							cout << endl;
 						}
 					}
